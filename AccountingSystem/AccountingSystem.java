@@ -207,3 +207,94 @@ public class AccountingSystem extends JFrame {
         }
     }
 }
+
+
+
+
+
+// AnimalTest.java
+// Demonstrates OOP Concepts: Encapsulation, Inheritance, and Polymorphism
+
+// Superclass
+class Animal {
+    // Encapsulated attributes
+    private String name;
+    private int age;
+
+    // Constructor
+    public Animal(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Getter methods (Encapsulation)
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    // Method to display basic information
+    public void displayInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age + " years old");
+    }
+
+    // Method meant to be overridden (Polymorphism)
+    public void move() {
+        System.out.println("This animal moves in some way.");
+    }
+}
+
+// Subclass: Dog
+class Dog extends Animal {
+    public Dog(String name, int age) {
+        super(name, age);
+    }
+
+    // Overriding move() method
+    @Override
+    public void move() {
+        System.out.println(getName() + " runs on four legs.");
+    }
+}
+
+// Subclass: Fish
+class Fish extends Animal {
+    public Fish(String name, int age) {
+        super(name, age);
+    }
+
+    // Overriding move() method
+    @Override
+    public void move() {
+        System.out.println(getName() + " swims in water.");
+    }
+}
+
+// Main application
+public class AnimalTest {
+    public static void main(String[] args) {
+        // Create subclass objects
+        Animal dog = new Dog("Buddy", 3);
+        Animal fish = new Fish("Goldie", 1);
+
+        // Store them in an array (Polymorphism)
+        Animal[] animals = { dog, fish };
+
+        // Iterate and display info + movement
+        for (Animal a : animals) {
+            a.displayInfo();
+            a.move();
+            System.out.println("----------------------");
+        }
+    }
+}
+
+
+
+
+
+
